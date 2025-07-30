@@ -1,0 +1,204 @@
+.hero {
+  height: 100vh;
+  background-image: url('../images/workshop-entrance.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.7), rgba(26, 26, 26, 0.8));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+/* Updated Gallery Styles */
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 60px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 300px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 30px 20px 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-overlay h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: var(--primary-gold);
+}
+
+.gallery-overlay p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+/* Updated Contact Map Styles */
+.contact-map {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  min-height: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+
+}
+
+.contact-map:hover {
+  border-color: var(--primary-gold);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+.contact-map iframe {
+  filter: grayscale(20%) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+
+.contact-map:hover iframe {
+  filter: grayscale(0%) contrast(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .gallery-item {
+    height: 250px;
+  }
+  
+  .contact-map {
+    min-height: 300px;
+  }
+}
+
+.contact-map {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  min-height: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-map:hover {
+  border-color: var(--primary-gold);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+}
+
+/* Gallery with Real Images */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(212, 175, 55, 0.95);
+  color: var(--dark-bg);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.hero {
+  height: 100vh;
+  background-color: #333; /* This should show */
+  background-image: url('./images/workshop-entrance.jpg');
+  background-size: cover;
+  background-position: center;
+  /* ... rest of your properties */
+}
+
+.gallery-item img {
+  filter: brightness(1.1) contrast(1.15) saturate(1.1);
+  transition: filter 0.3s ease;
+}
+
+.gallery-item:hover img {
+  filter: brightness(1.2) contrast(1.25) saturate(1.2);
+}
+.contact-map {
+  width: 100%;
+  height: 400px; /* adjust the height as needed */
+  border-radius: 20px;
+  overflow: hidden;
+}
